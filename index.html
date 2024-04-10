@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/Top.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Terminal Decodificador</title>
+</head>
+
+<body>
+    <header><img src="assets/Top.svg" alt="Alura"></header>
+    <main>
+        <div class="input-line">
+            <text>
+                <span style="color: chartreuse;">User</span><span>: $</span>
+            </text>
+            <textarea type="text" class="input-text" placeholder="insira sua mensagem aqui" rows="20"></textarea>
+            <div class="buttons">
+                <button class="cript-button">Criptografar</button>
+                <button class="descript-button">Descriptografar</button>
+            </div>
+        </div>
+
+        <div class="output-line">
+            <text>
+                <span style="color: cyan;">Decodificador</span><span>: $</span>
+            </text>
+            <textarea type="text" class="result-text" rows="20" readonly>aguardando mensagem...</textarea>
+            <div class="buttons">
+                <button class="copy-button">Copiar</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <h3>Desenvolvido por <a href="#">lecklis</a></h3>
+    </footer>
+    <script src="functions.js"></script>
+</body>
+
+</html>
