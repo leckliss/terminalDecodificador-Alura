@@ -11,6 +11,42 @@ body {
 
 header {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1%;
+}
+
+header img {
+    padding-left: 3%;
+}
+
+.typing-animation {
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    letter-spacing: .05em;
+    animation: typing 3s steps(30, end), blink-caret .90s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 40%
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent
+    }
+    50% {
+        border-color: orange
+    }
 }
 
 main {
@@ -92,6 +128,7 @@ textarea::-webkit-scrollbar {
     border-radius: 5px;
     cursor: pointer;
 }
+
 .copy-button {
     color: whitesmoke;
     font-size: 20px;
@@ -112,6 +149,7 @@ textarea::-webkit-scrollbar {
 .copy-button:hover {
     background-color: #555;
 }
+
 .cript-button:focus,
 .descript-button:focus,
 .copy-button:focus {
@@ -123,7 +161,26 @@ textarea::-webkit-scrollbar {
     main {
         flex-direction: column;
     }
-    .output-line{
+    header h1{
+        font-size:x-large;
+    }
+    .input-line,
+    .output-line {
+        width: 100%;
         margin-top: 5vh;
+    }
+    textarea{
+        width: 95%;
+    }
+    .cript-button,
+    .descript-button{
+        height: 10vh;
+    }
+    .copy-button{
+        width: 95%;
+        height: 10vh
+    }
+    footer{
+        margin-top: 10vh;
     }
 }

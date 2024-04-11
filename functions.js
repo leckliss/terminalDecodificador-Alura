@@ -7,29 +7,31 @@ const descriptButton = document.querySelector('.descript-button');
 const copyButton = document.querySelector('.copy-button');
 
 
-criptButton.addEventListener('click', function(){
+criptButton.addEventListener('click', function () {
     const textoParaCriptografar = texto.value.toLowerCase(); // Garante que o texto esteja todo em minúsculas
     const textoCriptografado = criptografarTexto(textoParaCriptografar);
     resultText.value = textoCriptografado;
+    copyButton.textContent = 'Copiar mensagem';
 });
 
-descriptButton.addEventListener('click', function(){
+descriptButton.addEventListener('click', function () {
     const textoParaDescriptografar = texto.value.toLowerCase();
     const textoDescriptografado = descriptografarTexto(textoParaDescriptografar);
     resultText.value = textoDescriptografado;
+    copyButton.textContent = 'Copiar mensagem';
 });
 
 copyButton.addEventListener('click', function () {
-    
+
     resultText.select(); // seleciona a mensagem
     document.execCommand('copy'); //executar comando de copiar texto selecionado
-    
-    copyButton.textContent = 'Copiado'; // alterar o texto do botão para "Copiado"
+
+    copyButton.textContent = 'Mensagem copiada'; // alterar o texto do botão para "Copiado"
 });
 
 
 function criptografarTexto(texto) {
-    //mapaamento de cada 
+    //mapeamento de chave de criptografia fornecido pela alura
     const criptoMap = {
         'e': 'enter',
         'i': 'imes',
@@ -43,8 +45,9 @@ function criptografarTexto(texto) {
     return textoCriptografado;
 }
 
-// Função para descriptografar o texto
+
 function descriptografarTexto(textoCriptografado) {
+    //mapeamento de chave de descriptografia fornecido pela alura
     const descriptoMap = {
         'enter': 'e',
         'imes': 'i',
@@ -58,3 +61,19 @@ function descriptografarTexto(textoCriptografado) {
 
     return textoDescriptografado;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const textarea = document.getElementById('typing-area');
+    const text = 'aguardando mensagem...';
+    let index = 0;
+  
+    function typeText() {
+      textarea.value = text.slice(0, index);
+      index++;
+      if (index <= text.length) {
+        setTimeout(typeText, 100);
+      }
+    }
+  
+    typeText();
+  });

@@ -10,7 +10,10 @@
 </head>
 
 <body>
-    <header><img src="assets/Top.svg" alt="Alura"></header>
+    <header>
+        <img src="assets/Top.svg" alt="Alura"><span>: $</span>
+        <h1 class="typing-animation"> Terminal Decodificador</h1>
+    </header>
     <main>
         <div class="input-line">
             <text>
@@ -27,9 +30,9 @@
             <text>
                 <span style="color: cyan;">Decodificador</span><span>: $</span>
             </text>
-            <textarea type="text" class="result-text" rows="20" readonly>aguardando mensagem...</textarea>
+            <textarea type="text" id="typing-area" class="result-text" rows="20" readonly></textarea>
             <div class="buttons">
-                <button class="copy-button">Copiar</button>
+                <button class="copy-button">Copiar mensagem</button>
             </div>
         </div>
     </main>
